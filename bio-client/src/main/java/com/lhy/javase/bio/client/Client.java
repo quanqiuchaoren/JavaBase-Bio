@@ -33,9 +33,9 @@ public class Client {
             while(true){
                 //虽然我们还没见过到GUI，这里小小用一个gui里的弹出对话框
                 String userName = JOptionPane.showInputDialog(tip + "输入用户名：");
-                //就把用户输入的用户名发送给服务器
+                //就把用户输入的用户名发送给服务器，发送消息不会阻塞，即使服务端没有接受消息，客户端程序也可以继续运行后面的代码
                 ps.println(ChatRoomProtocol.USER_ROUND + userName + ChatRoomProtocol.USER_ROUND);
-                //发送后，紧接着获取服务器的响应
+                //发送后，紧接着获取服务器的响应，这行代码会阻塞，直到接受到服务端的消息。
                 String res = inServer.readLine();
                 //用户名重复了，返回-1
                 if(res.equals(ChatRoomProtocol.NAME_REP)){
