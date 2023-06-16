@@ -24,7 +24,7 @@ public class ServerThread implements Runnable {
             ps = new PrintStream(socket.getOutputStream(), true, "GBK");
             //先通过br读数据
             String lines = null;
-            //用循环不断地读取客户端发送来的信息
+            //用循环不断地读取客户端发送来的信息，br.readLine会阻塞，直到接受到客户端发送过来的消息。
             while ((lines = br.readLine()) != null) {
                 //先读取客户端发送来的用户名
                 //协议规定，客户端发送来的用户名信息，必须是USER_ROUND作为信息的前后缀
@@ -38,6 +38,7 @@ public class ServerThread implements Runnable {
                         ps.println(ChatRoomProtocol.NAME_REP);
                     } else {
                         System.out.println("用户登录成功！");
+                        // 这行代码不会阻塞，发送消息不会阻塞。
                         ps.println(ChatRoomProtocol.LOGIN_SUCCESS);
                         Server.clients.put(userName,ps);
                     }
