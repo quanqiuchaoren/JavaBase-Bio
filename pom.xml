@@ -9,9 +9,9 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>bio-server</module>
-        <module>bio-client</module>
-        <module>bio-common</module>
+        <module>nio-server</module>
+        <module>nio-client</module>
+        <module>nio-common</module>
     </modules>
 
     <properties>
