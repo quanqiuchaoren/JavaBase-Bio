@@ -1,11 +1,7 @@
-package com.lhy.javase.bio.client;
-
-import com.lhy.javase.nio.common.ChatRoomProtocol;
-import com.lhy.javase.nio.common.WriteUtil;
+package com.lhy.javase.nio.client;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 import java.nio.charset.StandardCharsets;

@@ -1,4 +1,4 @@
-package com.lhy.javase.bio.client;
+package com.lhy.javase.nio.client;
 
 import com.lhy.javase.nio.common.ReadUtil;
 
